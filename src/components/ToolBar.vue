@@ -8,10 +8,10 @@
     </div>
 
     <div class="rightSideList">
-      <span>Intro</span>&nbsp;
+      <span>About Me</span>&nbsp;
       <span class="nowMenu">Career</span>&nbsp;
+      <span>Skills</span>&nbsp;
       <span>Projects</span>&nbsp;
-      <span>Contact</span>
     </div>
 
   </div>
@@ -28,9 +28,9 @@ export default {
 .header {
   color: black;
   display: flex;
-  padding: 25px;
   width: 100%;
   font-family: Century Gothic;
+  margin-top: 10px;
 }
 /* // router-link(=a태그)가 클릭 되었을 때 / router-link는 자동으로 a태그로 인식됨 */
 .header .router-link-exact-active {

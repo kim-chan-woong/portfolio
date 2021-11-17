@@ -1,23 +1,32 @@
 <template>
 
-  <div class="container">
-
+  <div class="mainContainer">
+    
     <div class="header">
+
       <span class="fa-stack fa-lg">
         <i class="fa fa-square-o fa-stack-2x"></i>
         <i class="fas fa-terminal fa-stack-1x"></i>
       </span>
+
       <span class="headerText">
         KCW's Portfolio Page
       </span>
+
+      <div class="headerRightIcons">
+        <i class="fas fa-minus"></i>&nbsp;
+        <i class="far fa-square"></i>&nbsp;
+        <i class="fas fa-times"></i>
+      </div>
+
     </div>
     
     <div class="content">
 
       <div class="updateText">
-        Thank you for visiting!<br>
+        Thank you for visiting!
         This page was created using <span class="vueText"><i class="fab fa-vuejs"></i>vuejs</span><br>
-        Last Updated Date: 2021-11-09 KR
+        Last Updated Date: 2021-11-10 KR
       </div>
 
       <div class="textArea">
@@ -63,37 +72,47 @@ export default {
   methods: {
     clickNextBtn() {
       console.log('click!!');
-    }
+    },
   }
 }
 </script>
 
 <style scoped>
-.container {
-  background-color: black;
-  font-family: Bahnschrift;
+.mainContainer {
+  font-family: Gulim;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 .header {
   background-color: white;
-  display: flex;
-  padding: 2px;
+  display: inline-block;
+  padding: 3px;
   width: 100%;
-  height: 5.2%;
+  height: 38px;
+}
+.fa-stack {
+  float: left;
+  margin-top: 1px;
 }
 .headerText {
-  position: absolute;
-  left: 50px; 
-  top: 15px; 
+  float: left;
+  line-height: 300%;
+  font-weight: 700;
+}
+.headerRightIcons {
+  float: right;
+  padding: 0.85rem 1rem;
+  font-size: 25px;
 }
 .content {
+  background-color: black;
   display: inline-block;
   color: white;
   padding: 0.75rem 1rem;
   width: 100%;
-  height: 94.8%
+  height: calc(100% - 50px);
+  overflow-x: hidden;
 }
 .updateText {
   font-size: 30px;
@@ -110,6 +129,7 @@ export default {
 }
 .pathText {
   float: left;
+  color: blue;
 }
 .greetText {
   float: left;
