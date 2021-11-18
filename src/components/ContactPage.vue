@@ -1,15 +1,7 @@
 <template>
   <div class="mainContainer">
-
     <div class="content">
-      <!-- <img src="../assets/idphoto.jpg"> -->
-      <table>
-        <tr>
-          <th>aaa</th>
-          <th>bbbcc</th>
-        </tr>
-      </table>
-
+      contact page!
     </div>
   </div>
 </template>

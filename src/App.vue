@@ -1,11 +1,14 @@
 <template>
   <div id="app"> 
 
-    <div class="sectionsMenu">
-      <tool-bar></tool-bar>
+    <div v-bind:class="classObject">
+      <tool-bar
+        v-bind:nowSectionNum="nowSection"
+        v-on:clickSection="moveSectionClick">
+      </tool-bar>
     </div>
 
-    <section class="contents firstPage">
+    <section class="firstPage">
       <first-page></first-page>
     </section>
 
@@ -25,6 +28,10 @@
       <projects-page></projects-page>
     </section>
 
+    <section class="contents contact">
+      <contact-page></contact-page>
+    </section>
+
     <!-- <keep-alive>
       <component v-bind:is="selectedComponent"></component>
     </keep-alive> -->
@@ -42,29 +49,45 @@ import AboutMePage from './components/AboutMePage.vue'
 import SkillsPage from './components/SkillsPage.vue'
 import ProjectsPage from './components/ProjectsPage.vue'
 import CareerPage from './components/CareerPage.vue'
+import ContactPage from './components/ContactPage.vue'
 
 export default {
   name: 'App',
   data() {
     return {
-      nowFirstPage: false,
       isMove: false,
       nowSection: 0,
       offsets: [],
       startY: 0,
     }
   },
-    components: {
+  components: {
     ToolBar,
     FirstPage,
     AboutMePage,
     SkillsPage,
     ProjectsPage,
     CareerPage,
+    ContactPage,
   },
   mounted() {
     this.getSectionOffsets();
-    this.checkFirstPage
+  },
+  computed: {
+    // 현재 위치가 첫 페이지면 클래스 바인딩을 통해 툴바를 숨기고 아니라면 툴바를 표현
+    classObject: function() {
+      if (this.nowSection === 0) {
+        return {
+          sectionsMenu: false,
+          hiddenSectionsMenu: true,
+        }
+      } else {
+        return {
+          sectionsMenu: true,
+          hiddenSectionsMenu: false,
+        }
+      }
+    }
   },
   methods: {
     // 페이지 내 각 섹션들의 offset값 setting
@@ -75,14 +98,6 @@ export default {
       for (let i = 0; i < sections_length; i++) {
         let sectionOffset = sections[i].offsetTop;
         this.offsets.push(sectionOffset);
-      }
-    },
-
-    checkFirstPage() {
-      if (this.nowSection === 0) {
-        this.checkFirstPage = true;
-      } else {
-        this.checkFirstPage = false;
       }
     },
 
@@ -107,7 +122,7 @@ export default {
       return false;
     },
 
-    // 아래 스크롤
+    // 위로 스크롤 할 시
     scrollDown() {
       this.isMove = true;
       this.nowSection--;
@@ -117,7 +132,7 @@ export default {
       this.scrollToSection(this.nowSection, true);
     },
 
-    // 위 스크롤
+    // 아래로 스크롤 시
     scrollUp() {
       this.isMove = true;
       this.nowSection++;
@@ -195,11 +210,14 @@ html, body {
 }
 .sectionsMenu {
   width: 100%;
-  height: 7%;
+  height: 50px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+}
+.hiddenSectionsMenu {
+  display: none;
 }
 .firstPage {
   height: 100%;
@@ -213,20 +231,7 @@ html, body {
   height: 100%;
   width: 100%;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
-}
-a {
-  color: #34495e;
-  text-decoration: none;
-}
-a:hover {
-  color: #42b883;
-  text-decoration: underline;
-}
-a.router-link-exact-active {
-  text-decoration: underline;
 }
 /* Router Transition */
 .page-enter-active, .page-leave-active {

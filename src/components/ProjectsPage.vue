@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    projects page!
+  <div class="mainContainer">
+    <div class="content">
+      projects page!
+    </div>
   </div>
 </template>
 
@@ -11,9 +13,14 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.mainContainer {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+.content {
+  position: relative;
+  top: 50px;
+  height: calc(100% - 50px);
 }
 </style>

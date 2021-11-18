@@ -111,7 +111,7 @@ export default {
   color: white;
   padding: 0.75rem 1rem;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 38px);
   overflow-x: hidden;
 }
 .updateText {

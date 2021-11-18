@@ -8,10 +8,17 @@
     </div>
 
     <div class="rightSideList">
-      <span>About Me</span>&nbsp;
-      <span class="nowMenu">Career</span>&nbsp;
-      <span>Skills</span>&nbsp;
-      <span>Projects</span>&nbsp;
+
+      <!-- 섹션에 첫 페이지가 포함되어 있기에 index+1로 계산 -->
+      <div
+        class="sectionsList"
+        :class="{nowMenu: nowSectionNum === index+1}"
+        v-for="(section, index) in sections"
+        v-bind:key="index"
+        v-on:click="sectionClick(index+1)">
+        {{ section }}
+      </div>
+
     </div>
 
   </div>
@@ -20,7 +27,18 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      sections: ['AboutMe', 'Career', 'Skills', 'Projects', 'Contact']
+    }
+  },
+  methods: {
+    // 툴바 내 특정 섹션 클릭 시 App.vue에 이벤트 전달
+    sectionClick(sectionNum) {
+      this.$emit('clickSection', sectionNum);
+    },
+  },
+  props: ['nowSectionNum'],
 }
 </script>
 
@@ -31,13 +49,6 @@ export default {
   width: 100%;
   font-family: Century Gothic;
   margin-top: 10px;
-}
-/* // router-link(=a태그)가 클릭 되었을 때 / router-link는 자동으로 a태그로 인식됨 */
-.header .router-link-exact-active {
-  color: #35495e;
-}
-.header a {
-  color: white;
 }
 .fas {
   color: rgb(100, 100, 100);
@@ -53,7 +64,19 @@ export default {
   padding: 0.75rem 1rem;
   font-size: 25px;
 }
-.nowMenu {
+.rightSideList .sectionsList {
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+  opacity: .5;
+  transition: .5s ease all;
+  padding: 2px 5px;
+}
+.rightSideList .sectionsList:last-of-type {
+  margin-right: 0;
+}
+.rightSideList .sectionsList.nowMenu {
+  opacity: 1.5;
   background-color: rgb(194, 206, 206);
   border-radius: 5px;
 }
