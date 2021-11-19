@@ -3,8 +3,7 @@
   <div class="header">
     
     <div class="leftSideList">
-      <i class="fas fa-paperclip"></i>
-      KCW's Portfolio Page
+      &lt; KCW's Portfolio Page /&gt;
     </div>
 
     <div class="rightSideList">
@@ -29,7 +28,7 @@
 export default {
   data () {
     return {
-      sections: ['AboutMe', 'Career', 'Skills', 'Projects', 'Contact']
+      sections: ['AboutMe', 'Timeline', 'Skills', 'Projects', 'Contact']
     }
   },
   methods: {
@@ -47,11 +46,8 @@ export default {
   color: black;
   display: flex;
   width: 100%;
-  font-family: Century Gothic;
+  font-family: Bahnschrift;
   margin-top: 10px;
-}
-.fas {
-  color: rgb(100, 100, 100);
 }
 .leftSideList {
   float: left;

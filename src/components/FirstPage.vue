@@ -26,7 +26,7 @@
       <div class="updateText">
         Thank you for visiting!
         This page was created using <span class="vueText"><i class="fab fa-vuejs"></i>vuejs</span><br>
-        Last Updated Date: 2021-11-10 KR
+        Last Updated Date: 2021-11-19 KR
       </div>
 
       <div class="textArea">

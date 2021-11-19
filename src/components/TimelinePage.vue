@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div class="content">
-      career page!
+      timeline page!
     </div>
   </div>
 </template>

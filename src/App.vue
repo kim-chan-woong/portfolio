@@ -17,7 +17,7 @@
     </section>
 
     <section class="contents career">
-      <career-page></career-page>
+      <timeline-page></timeline-page>
     </section>
 
     <section class="contents skills">
@@ -48,7 +48,7 @@ import FirstPage from './components/FirstPage.vue'
 import AboutMePage from './components/AboutMePage.vue'
 import SkillsPage from './components/SkillsPage.vue'
 import ProjectsPage from './components/ProjectsPage.vue'
-import CareerPage from './components/CareerPage.vue'
+import TimelinePage from './components/TimelinePage.vue'
 import ContactPage from './components/ContactPage.vue'
 
 export default {
@@ -67,7 +67,7 @@ export default {
     AboutMePage,
     SkillsPage,
     ProjectsPage,
-    CareerPage,
+    TimelinePage,
     ContactPage,
   },
   mounted() {
@@ -99,6 +99,11 @@ export default {
         let sectionOffset = sections[i].offsetTop;
         this.offsets.push(sectionOffset);
       }
+    },
+
+    // 툴바에서 특정 섹션을 클릭하였을 때 이벤트를 받고 메서드 실행
+    moveSectionClick(sectionNum) {
+      this.scrollToSection(sectionNum, true);
     },
 
     // 마우스 휠 사용 시 위, 아래 스크롤 판단, Mozilla Firefox 이외 다른 브라우저들 해당
