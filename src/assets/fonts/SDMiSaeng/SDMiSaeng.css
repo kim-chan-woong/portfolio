@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "SDMiSaeng";
+  src: local("SDMiSaeng"), url("../fonts/SDMiSaeng/SDMiSaeng.eot"),
+    url("../fonts/SDMiSaeng/SDMiSaeng.woff") format("woff"),
+    url("../fonts/SDMiSaeng/SDMiSaeng.ttf") format("truetype");
+}

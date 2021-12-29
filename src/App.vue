@@ -9,14 +9,14 @@
     </div>
 
     <section class="firstPage">
-      <first-page></first-page>
+      <first-page v-on:clickNext="scrollUp"></first-page>
     </section>
 
     <section class="contents aboutMe">
       <about-me-page></about-me-page>
     </section>
 
-    <section class="contents career">
+    <section class="contents timeline">
       <timeline-page></timeline-page>
     </section>
 
@@ -215,7 +215,7 @@ html, body {
 }
 .sectionsMenu {
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   position: fixed;
   top: 0;
   left: 0;
@@ -228,8 +228,6 @@ html, body {
   height: 100%;
   width: 100%;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
 }
 .contents {

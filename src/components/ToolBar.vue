@@ -42,23 +42,25 @@ export default {
 </script>
 
 <style scoped>
+@import "../assets/style/SDMiSaeng.css";
 .header {
-  color: black;
+  color: #6F4C5B;
   display: flex;
   width: 100%;
-  font-family: Bahnschrift;
+  /* font-family: Bahnschrift; */
+  font-family: 'SDMiSaeng', sans-serif;
   margin-top: 10px;
 }
 .leftSideList {
   float: left;
   margin: 0 auto;
   padding: 0rem 0.25rem;
-  font-size: 35px;
+  font-size: 59px;
 }
 .rightSideList {
   margin: 0 auto;
   padding: 0.75rem 1rem;
-  font-size: 25px;
+  font-size: 41px;
 }
 .rightSideList .sectionsList {
   display: inline-block;
@@ -73,7 +75,7 @@ export default {
 }
 .rightSideList .sectionsList.nowMenu {
   opacity: 1.5;
-  background-color: rgb(194, 206, 206);
+  background-color: #DEBA9D;
   border-radius: 5px;
 }
 </style>

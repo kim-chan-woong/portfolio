@@ -20,7 +20,7 @@ export default {
 }
 .content {
   position: relative;
-  top: 50px;
-  height: calc(100% - 50px);
+  top: 80px;
+  height: calc(100% - 80px);
 }
 </style>
